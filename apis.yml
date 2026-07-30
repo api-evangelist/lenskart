@@ -1,24 +1,80 @@
 aid: lenskart
 name: Lenskart
-description: 'Lenskart is a company surfaced as a portfolio company of softbank-vision-fund and added
-  to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Lenskart is a direct-to-consumer eyewear company operating an omnichannel
+  retail business across prescription eyeglasses, sunglasses, contact lenses and eye-care
+  services. It sells through localized storefronts (India, United States, Singapore
+  and other markets) and mobile apps, and merchandises its own house brands including
+  Vincent Chase, John Jacobs, Lenskart Studio and Lenskart Boost alongside third-party
+  labels. The digital experience layer includes 3D/AR virtual try-on and look comparison,
+  a saved-prescription and prescription-history profile, order tracking and a loyalty
+  program. Lenskart is backed by SoftBank Vision Fund. As of this enrichment pass Lenskart
+  publishes no public developer portal, API reference, OpenAPI definition or client
+  SDKs; the developer- and docs-named subdomains that resolve are gated behind Cloudflare
+  and return 403 to unauthenticated clients, so no API surface could be verified.'
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://static.lenskart.com/media/mobile/images/lenskart_icon_512X512.png
 url: https://raw.githubusercontent.com/api-evangelist/lenskart/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - softbank-vision-fund
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: no-public-api-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Consumer
+- Retail
+- E-Commerce
+- Eyewear
+- Direct to Consumer
+- Optical
+- Omnichannel
 apis: []
+common:
+- type: DomainSecurity
+  url: security/lenskart-domain-security.yml
+- type: Website
+  url: https://www.lenskart.com/
+- type: About
+  url: https://www.lenskart.com/en-us/us_about_us
+- type: Blog
+  url: https://blog.lenskart.com/
+- type: SignUp
+  url: https://www.lenskart.com/en-us/customer/account
+- type: Support
+  url: https://api.whatsapp.com/send/?phone=918929853854
+  name: WhatsApp support
+  description: WhatsApp chat channel published on the Lenskart storefront.
+- type: TermsOfService
+  url: https://www.lenskart.com/en-us/us_terms_conditions
+- type: PrivacyPolicy
+  url: https://www.lenskart.com/en-us/us_privacy_policy
+- type: ReturnPolicy
+  url: https://www.lenskart.com/en-us/us_return_exchange
+- type: MobileApp
+  url: https://www.lenskart.com/en-us/us_mobile_app
+- type: LLMsTxt
+  url: llms/lenskart-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
