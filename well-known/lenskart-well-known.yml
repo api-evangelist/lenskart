@@ -1,0 +1,60 @@
+generated: '2026-07-19'
+method: searched
+source: live HTTP probes of the /.well-known/ discovery surface
+result: none
+summary: No /.well-known/ discovery documents are published. www.lenskart.com answers
+  every /.well-known/ path with an HTTP 302 into the storefront single-page app, which
+  then returns 200 text/html — a soft 404, not a discovery document. api.lenskart.com
+  returns hard 404s. developer.lenskart.com and docs.lenskart.com are gated behind
+  Cloudflare and return 403 to unauthenticated clients, so their /.well-known/ surface
+  could not be verified. No pointer of type WellKnown or SecurityTxt is wired into
+  apis.yml, because no such document was found.
+hosts:
+- host: https://www.lenskart.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    soft_404: true
+- host: https://api.lenskart.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 0
+    note: connection timed out
+- host: https://developer.lenskart.com
+  note: Cloudflare challenge, HTTP 403 on every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403

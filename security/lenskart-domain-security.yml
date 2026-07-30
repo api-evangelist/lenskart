@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.lenskart.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  7 03:47:23 2026 GMT
+  hsts: false
+- host: api.lenskart.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  7 03:47:23 2026 GMT
+  hsts: false
+  note: host resolves and terminates TLS but returns HTTP 404 at the root; no public
+    API is documented behind it
+- host: blog.lenskart.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 17:20:11 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: lenskart.com
+  dnssec: true
+  caa:
+  - 0 issue "pki.goog; cansignhttpexchanges=yes"
+  - 0 issue "ssl.com"
+  - 0 issuewild "amazon.com"
+  - 0 issuewild "amazontrust.com"
+  - 0 issuewild "comodoca.com"
+  - 0 issuewild "digicert.com; cansignhttpexchanges=yes"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

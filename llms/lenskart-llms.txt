@@ -1,0 +1,31 @@
+# Lenskart
+
+> Lenskart is a direct-to-consumer eyewear company operating an omnichannel retail business across prescription eyeglasses, sunglasses, contact lenses and eye-care services, with house brands including Vincent Chase, John Jacobs, Lenskart Studio and Lenskart Boost. Backed by SoftBank Vision Fund. Lenskart publishes no public API, developer portal or SDKs as of 2026-07-19.
+
+## Status
+
+- No public API: no developer portal, API reference, OpenAPI/AsyncAPI definition, webhook catalog, MCP server or client SDK could be verified on any Lenskart surface.
+- `developer.lenskart.com` and `docs.lenskart.com` resolve but are gated behind Cloudflare (HTTP 403 to unauthenticated clients); neither can be confirmed as a public developer surface.
+- `api.lenskart.com` resolves and terminates TLS 1.3 but returns HTTP 404 at the root and documents nothing publicly.
+- No `/.well-known/` discovery documents are published; the storefront answers every `/.well-known/` path with a soft 404 (302 into the SPA, then 200 text/html).
+
+## Company
+
+- [Lenskart storefront](https://www.lenskart.com/): Localized eyewear storefront (India, United States, Singapore and other markets).
+- [About Lenskart](https://www.lenskart.com/en-us/us_about_us): Company overview.
+- [Lenskart blog](https://blog.lenskart.com/): Eyewear and eye-care editorial content.
+- [Mobile app](https://www.lenskart.com/en-us/us_mobile_app): Lenskart iOS and Android apps, including 3D/AR virtual try-on.
+- [Account and sign up](https://www.lenskart.com/en-us/customer/account): Customer account, saved prescriptions and order history.
+- [WhatsApp support](https://api.whatsapp.com/send/?phone=918929853854): Support channel published on the storefront.
+
+## Policies
+
+- [Terms and conditions](https://www.lenskart.com/en-us/us_terms_conditions)
+- [Privacy policy](https://www.lenskart.com/en-us/us_privacy_policy)
+- [Returns and exchange](https://www.lenskart.com/en-us/us_return_exchange)
+
+## Artifacts
+
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/lenskart/refs/heads/main/security/lenskart-domain-security.yml): Probed TLS, HSTS, DNSSEC, CAA, SPF and DMARC posture for lenskart.com.
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/lenskart/refs/heads/main/well-known/lenskart-well-known.yml): Recorded result of the /.well-known/ discovery sweep (none published).
+- [APIs.json](https://raw.githubusercontent.com/api-evangelist/lenskart/refs/heads/main/apis.yml): The API Evangelist profile for Lenskart.
