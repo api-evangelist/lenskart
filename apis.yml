@@ -11,6 +11,17 @@ description: 'Lenskart is a direct-to-consumer eyewear company operating an omni
   publishes no public developer portal, API reference, OpenAPI definition or client
   SDKs; the developer- and docs-named subdomains that resolve are gated behind Cloudflare
   and return 403 to unauthenticated clients, so no API surface could be verified.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
