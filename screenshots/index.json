@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "lenskart",
+    "captured_at": "2026-10-11T190425",
+    "source_url": "https://www.lenskart.com/",
+    "source_type": "Website",
+    "file": "lenskart-2026-10-11T190425.png",
+    "bytes": 546545,
+    "capture": "playwright-local"
+  }
+]
